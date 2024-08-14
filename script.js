@@ -62,7 +62,7 @@ mainInner.addEventListener("click", async function (event) {
   const target = event.target.closest(".main__card");
   if (!target) {
     return;
-  }  
+  } else if(cardState) {
   const targetInfo = target.textContent.trim();
   const targetData = await search(targetInfo);
   const targetId = targetData[0].id;
@@ -82,7 +82,7 @@ mainInner.addEventListener("click", async function (event) {
     );
   });
   searchWindow.style.display = "block";
-
+}
 });
 // боковое меню и все что его касается
 const asideP = document.querySelector(".aside");
@@ -222,39 +222,92 @@ header.addEventListener("mouseout", function (event) {
   }
   target.style.border = "none";
 });
+//пЕРЕТАСКИВАНИЕ РЕЦЕПТОВ В РЕЦЕПТУРНУЮ КНИЖКУ
+const recipesList = document.querySelector(".recipes__list");
+const cardParent = document.querySelector(".main__inner");
+const basketNotification = document.querySelector(".basket__notification");
 
-//Добавление карточки в корзину
-const addBtn = document.querySelector(".card__cardAdd")
-const recipesList = document.querySelector(".recipes__list")
-const cardParent = document.querySelector(".main__inner")
-const basketNotification = document.querySelector(".basket__notification")
-addBtn.addEventListener("click", async function (event) {
+cardParent.addEventListener("click", async function (event) {
+  const addBtn = event.target.closest(".card__cardAdd");
+  if (!addBtn) {
+    return;
+  }
+
   try {
-    
-  const target = event.target.closest(".main__card");
-  
- 
-  const targetInfo = target.textContent.trim();
-  const targetData = await search(targetInfo);
-  const targetId = targetData[0].id
-  console.log(2222)
- 
-      const cardTitle = targetData[0].title
-      const cardImg = targetData[0].image
+    const target = addBtn.closest(".main__card");
+    if (!target) {
+      console.error("Карточка не найдена!");
+      return;
+    }
 
-      recipesList.insertAdjacentHTML(
-        "afterbegin",
-        `<li class="recipes__item"><img class="recipes__img" src="${cardImg}"/><p class="recipes__text">${cardTitle}</p></li>`
-      )
-    
-} catch(error) {
-  console.error(error)
-}
-}); 
+    const targetInfo = target.textContent.trim();
+    const targetData = await search(targetInfo);
+
+    if (!targetData || targetData.length === 0) {
+      console.error("Рецепт не найден!");
+      return;
+    }
+
+    const targetId = targetData[0].id;
+    const cardTitle = targetData[0].title;
+    const cardImg = targetData[0].image;
+
+    recipesList.insertAdjacentHTML(
+      "afterbegin",
+      `<li class="recipes__item"><img class="recipes__img" src="${cardImg}"/><p class="recipes__text">${cardTitle}</p></li>`
+    );
+
+    // Отображение уведомления
+    basketNotification.style.transform = "translateX(-55%)";
+    setTimeout(() => {
+      basketNotification.style.transform = "translateX(-160%)";
+    }, 2000);
+
+  } catch (error) {
+    console.error("Ошибка при добавлении в корзину:", error);
+  }
+});
 // Корзина
 const basketBtn = document.querySelector(".account__logo")
 const basketWindow = document.querySelector(".recipes__info")
 basketBtn.addEventListener("click", function(event) {
   basketWindow.style.transform = "translateY(0%)"
 })
+//Карточки в корзине
+const cardArea = document.querySelector(".recipes__info")
+cardArea.addEventListener("click", async function(event) {
+  
+  try{
+  const target = event.target.closest(".recipes__item")
+  if(!target) {
+    return
+  }
+  const targetText = target.textContent.trim();
+  const targetData = await search(targetText);
+  const targetId = targetData[0].id
+  searchWindow.style.display = "block"; 
+  const targetElementData = await search(targetText);
+  const targetInfo = await openInfo(targetId);
+  const ingridientsArray = targetInfo.ingridientData.ingredients;
+  const nutritionsData = await openInfo(targetId);
+  const nutritionReady = nutritionsData.dataNutrition;
+  caloriesInfo.textContent = nutritionReady.calories;
+  fatInfo.textContent = nutritionReady.fat;
+  carbsInfo.textContent = nutritionReady.carbs;
+  proteinInfo.textContent = nutritionReady.protein;
+  openImg.src = targetElementData[0].image;
+  openTitle.textContent = targetElementData[0].title;
+  ingridientsArray.forEach((el) => {
+    openIngridients.insertAdjacentHTML(
+      "afterbegin",
+      `<li class="ingridients__item"> <p class="ingridients__name">${el.name}:</p><p class="ingridients__metric">${el.amount.metric.value} ${el.amount.metric.unit}</p></li>`
+    );
+  });
+} catch(error) {
+  console.error("Ошибка" + error)
+}
+}) 
+//Кнопка обновление ленты
+const updateBtn = document.querySelector(".main__update")
+updateBtn.addEventListener("click", fetchData)
 
