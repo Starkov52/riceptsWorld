@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Мир рецептов</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initialscale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <ul class="header__inner">
+        <li class="header__item">
+          <div class="header__menu">
+            <span class="menu__line"></span>
+            <span class="menu__line"></span>
+            <span class="menu__line"></span>
+            <span class="menu__line"></span>
+          </div>
+        </li>
+        <li class="header__item">
+          <a id="L0" class="header__ricept">Сытные рецепты</a>
+        </li>
+        <li class="header__item">
+          <a id="L1" class="header__ppRicept">ПП рецепты</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="#">
+            <img class="header__logo" src="img/logo.png" />
+          </a>
+        </li>
+        <li class="header__item">
+          <a id="L2" class="header__noMeatRicept">Рецепты богатые белком</a>
+        </li>
+        <li class="header__item">
+          <a id="L3" class="header__fastRicept">Сладкие рецепты</a>
+        </li>
+        <li class="header__item">
+          <a class="header__account" href="#">
+            <img src="img/free-icon-shopping-cart-5087784.png" class="account__logo" />
+          </a>
+        </li>
+      </ul>
+    </header>
+    <main class="main">
+      <div class="infoAboutFood">
+        <div class="infoAboutFood__inner">
+          <div class="infoAboutFood__head">
+            <img class="infoAboutFoodInner__img" src="" />
+            <h1 class="infoAboutFoodInner__title"></h1>
+            <div class="infoAboutFoodInner__nutrtions">
+              <p class="nutrtions__calories">
+                calories:<span class="nutrtions__caloriesInfo"></span>
+              </p>
+              <p class="nutrtions__fat">
+                fat:<span class="nutrtions__fatInfo"></span>
+              </p>
+              <p class="nutrtions__carbs">
+                carbs:<span class="nutrtions__carbsInfo"></span>
+              </p>
+              <p class="nutrtions__protein">
+                protein:<span class="nutrtions__proteinInfo"></span>
+              </p>
+            </div>
+          </div>
+          <div class="infoAboutFoodInner__info">
+            <h1 class="infoAboutFoodInner__ricept">Recept:</h1>
+            <div class="ingridients__inner">
+              <ul class="infoAboutFoodInner__ingridients"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="aside">
+        <div class="aside__inner">
+          <div class="aside__search">
+            <input
+              type="textarea"
+              class="aside__textarea"
+              placeholder="Введите слово"
+            />
+            <button class="aside__searchBtn"></button>
+          </div>
+          <div class="aside__searchResult">
+            <ul class="aside__searchList"></ul>
+          </div>
+        </div>
+      </aside>
+      
+      <div class="main__wrapper">
+        <h1 class="main__title">Рецепты на каждый день</h1>
+        <button class="main__update"><img src="img/update.png"></button>
+        <div class="main__inner">
+          <div   class="main__card">
+            <img id="0" draggable="false" class="main__img1" src="img/1.jpg" />
+            <div class="card__info">
+              <p id="text0" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div class="main__card">
+            <img id="1" draggable="false" class="main__img" src="img/2.jpg" />
+            <div class="card__info">
+              <p id="text1" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div  class="main__card">
+            <img id="2" draggable="false" class="main__img" src="img/2.jpg" />
+            <div class="card__info">
+              <p id="text2" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div  class="main__card">
+            <img id="3" draggable="false" class="main__img" src="img/3.jpg" />
+            <div class="card__info">
+              <p id="text3" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div  class="main__card">
+            <img id="4" draggable="false" class="main__img" src="img/4.jpg" />
+            <div class="card__info">
+              <p id="text4" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div  class="main__card">
+            <img id="5" draggable="false" class="main__img" src="img/5.jpg" />
+            <div class="card__info">
+              <p id="text5" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div  class="main__card">
+            <img id="6" draggable="false" class="main__img" src="img/6.jpg" />
+            <div class="card__info">
+              <p id="text6" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div class="main__card">
+            <img id="7" draggable="false" class="main__img" src="img/3.jpg" />
+            <div class="card__info">
+              <p id="text7" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+          <div  class="main__card">
+            <img id="8" draggable="false" class="main__img" src="img/1.jpg" />
+            <div class="card__info">
+              <p id="text8" class="card__text">Лазанья</p>
+              <button class="card__cardAdd"></button>
+            </div>
+          </div>
+        </div>
+        <div class="recipes__info">
+          <h1 class="recipes__title">Ваши рецепты:</h1>
+          <ul class="recipes__list">
+          </ul>
+        </div>
+        <div class="basket__notification">
+          <p class="notification__text">Перетащите выбранный елемент в корзину</p>
+        </div>
+        <div class="main__add2"></div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

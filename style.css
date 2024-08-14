@@ -1,0 +1,372 @@
+.header {
+  margin: 0;
+  padding: 0;
+}
+p,
+h1,
+a {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.menu__line {
+  display: block;
+  width: 30px;
+  height: 4px;
+  border-top: 2px solid black;
+}
+.header__inner {
+  display: flex;
+  height: 70px;
+  background-color: beige;
+  justify-content: center;
+  align-items: center;
+}
+.header__item {
+  margin: 0 auto;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  border-radius: 8px;
+
+  flex-wrap: wrap;
+}
+.header__menu {
+}
+.header__ricept {
+}
+.header__ppRicept {
+}
+.header__link {
+}
+.header__logo {
+}
+.header__noMeatRicept {
+}
+.header__fastRicept {
+}
+.header__account {
+}
+.account__logo {
+  width: 70px;
+  height: 50px
+}
+.main {
+  display: grid;
+  grid-template: 1fr / 300px 1fr 800px 1fr;
+  background-color: rgb(185, 203, 235);
+
+
+}
+.aside {
+  width: 200px;
+  height: 780px;
+  background-color: gray;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in;
+}
+
+.aside__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  align-content: center;
+}
+.aside__search {
+  display: flex;
+  margin-left: 5px;
+}
+.aside__textarea {
+  margin-left: 6px;
+  margin-top: 10px;
+  width: 140px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.aside__searchBtn {
+  margin-top: 8px;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  justify-self: center;
+  align-self: center;
+  background: url("img/zalupa.png") center no-repeat;
+}
+.aside__searchResult {
+  overflow: hidden;
+  width: 200px;
+}
+.aside__searchList {
+  background-color: bisque;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+  
+}
+.main__title {
+  margin-top: 15px;
+  font-size: 40px;
+
+  align-self: center;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+ .main__add1 {
+  background-color: red;
+  margin-right: 20px;
+}
+.main__add2 {
+  background-color: red;
+  margin-left: 20px;
+}
+.main__inner {
+  display: grid;
+  grid-template: 170px 170px / 290px 290px 290px;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: nowrap;
+  
+}
+.main__card {
+  cursor: grabbing;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  max-width: 250px;
+  max-height: 180px;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  
+}
+
+.main__img {
+  margin: auto;
+  border-radius: 10px;
+  width: 230px;
+  height: 130px;
+}
+.main__img1 {
+  margin: auto;
+  border-radius: 10px;
+  width: 230px;
+  height: 130px;
+  border: none;
+}
+.card__info {
+  height: 70px;
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-items: center;
+}
+.card__text {
+  margin-left: 5px;
+  width: 150px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.card__cardAdd {
+  width: 24px;
+  height: 24px;
+  background: url(img/add.png);
+  border: none;
+  justify-self: start;
+  margin-right: 5px;
+}
+.result__item a {
+  text-decoration-line: none;
+  color: black;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.result__item {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.infoAboutFood {
+  width: 700px;
+  height: 500px;
+  background-color: rgb(169, 182, 182);
+  position: absolute;
+  top: 80px;
+  left: 320px;
+  border-radius: 20px;
+  display: none;
+}
+.infoAboutFood__head {
+  display: flex;
+  gap: 20px 0;
+  flex-direction: column;
+}
+.infoAboutFood__inner {
+  display: flex;
+  gap: 0 20px;
+}
+.infoAboutFoodInner__img {
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 400px;
+  height: 296px;
+}
+.infoAboutFoodInner__title {
+  margin-left: 15px;
+
+  align-self: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+.infoAboutFoodInner__ingridients {
+}
+.infoAboutFoodInner__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  max-height: 500px;
+  display: flex;
+  overflow: auto;
+}
+.infoAboutFoodInner__ricept {
+  align-self: center;
+  justify-self: center;
+  font-weight: 600;
+  font-size: 25px;
+  display: flex;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.ingridients__metric {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  font-size: 25px;
+}
+
+.ingridients__name {
+  font-size: 25px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.ingridients__item {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  margin-bottom: 10px;
+}
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: rgb(169, 182, 182);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(166, 104, 224);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.infoAboutFoodInner__nutrtions {
+  margin-left: 25px;
+  gap: 10px 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-weight: 600;
+}
+.recipes__info {
+  width: 250px;
+  height: 700px;
+  background-color:rgb(169, 182, 182);
+  position: fixed;
+  left: 1290px;
+  top: 70px;
+  transform: translateY(-150%);
+  transition: transform 300ms ease;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: center
+}
+.recipes__title {
+  font-weight: 700px;
+  font-size: 30px;
+  font-family: "Rubik", sans-serif;
+  margin-top: 15px
+}
+.recipes__list {
+  margin-top: 15px;
+  gap: 20px 0px;
+}
+.recipes__item {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  margin-top: 20px;
+  border-radius: 8px;
+  justify-items: center;
+}
+.recipes__img {
+  padding: 8px;
+  width: 200px;
+  height: 100px
+}
+.recipes__text {
+align-self: center;
+font-weight: 700px;
+  font-size: 15px;
+  font-family: "Rubik", sans-serif;
+}
+.basket__notification {
+height: 50px;
+width: 550px;
+position: absolute;
+transform: translateX(-160%);
+transition: transform 1s ease-out;
+display: flex;
+align-items:center;
+justify-content: center;
+border-radius: 15px;
+background: linear-gradient(45deg, rgb(199, 208, 206), rgb(110, 125, 126));
+}
+.notification__text {
+  font-weight: 700px;
+  font-size: 25px;
+  font-family: "Rubik", sans-serif;
+}
+.main__update {
+  background-color: transparent;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  align-self: center
+} 
+.main__update:hover {
+  background-color: beige;
+}
