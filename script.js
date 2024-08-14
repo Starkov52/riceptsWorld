@@ -1,5 +1,5 @@
 const header = document.querySelector(".header__inner");
-const keyG = "86da1b49c0944a45984f48d9d7a24c91"
+const keyG = "e4d801160a404dff99e676fc13599151"
 async function fetchData() {
   const randomRecipes = [];
   const arrayImg = [];

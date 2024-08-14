@@ -97,7 +97,7 @@ a {
   border-radius: 10px;
   justify-self: center;
   align-self: center;
-  background: url("img/zalupa.png") center no-repeat;
+  background: url("img/lupa.png") center no-repeat;
 }
 .aside__searchResult {
   overflow: hidden;
